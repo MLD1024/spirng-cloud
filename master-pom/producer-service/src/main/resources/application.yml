@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: producer-service
+  datasource:
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://192.168.52.129:3306/spring         # 数据库名称
+    username: root
+    password: SW!root123
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+#  type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml                      # mapper映射文件
+# 将客户端注册进eureka服务列表内
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka
+  instance:
+    instance-id: producer-service-8080
+    prefer-ip-address: true #访问路径中可以显示ip地址
+
+info:
+  app.name: producer-service
+  company.name: lz
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+

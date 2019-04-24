@@ -1,0 +1,15 @@
+server:
+  port: 8090
+
+eureka:
+  instance:
+    hostname: localhost  # eureka 服务端的实例名称
+  client:
+    registerWithEureka: false # 表示不向注册中心注册自己
+    fetchRegistry: false # 表示自己就是注册中心，职责就是维护实例，并不需要去检索服务
+    serviceUrl: # 设置eureka server 交互的地址查询和注册服务地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#开启健康检查（需要spring-boot-starter-actuator依赖）
+#  eureka.client.healthcheck.enabled=true#开启健康检查（需要spring-boot-starter-actuator依赖）
+#debug: true
+

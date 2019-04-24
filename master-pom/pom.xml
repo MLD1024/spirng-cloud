@@ -8,6 +8,8 @@
         <module>producer-service</module>
         <module>eureka-server</module>
         <module>zuul-server</module>
+        <module>ribbon-customer-service</module>
+        <module>feign-customer-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

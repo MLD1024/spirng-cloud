@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: customer-service
+
+
+server:
+  port: 80
+
+# 将客户端注册进eureka服务列表内
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka
+  instance:
+    instance-id: customer-service-80
+    prefer-ip-address: true
+
+info:
+  app.name: customer-service
+  company.name: lz
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
